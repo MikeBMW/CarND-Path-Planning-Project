@@ -1,9 +1,9 @@
 # CarND-Path-Planning-Project
 
-##code scope
+## Code scope
 Most of my code is between the keyword of TODO and END;
 
-##Use spline.h to smooth out the path
+## Use spline.h to smooth out the path
 Line 11,include spline.h in the beginning of the main.cpp file;Create some points with spaces of 30 meters, then use spline to fit that space.Take points inside that spline;
 
 L168,define variable of "lane", use it to switch to other lanes;
@@ -32,7 +32,7 @@ Line 418 to 427, building working points with last time previous points, they ar
 
 Line 430 to 457, if there are any points from the previous path,add them to path planner.Instead of recreating the path from scratch every single time,add points onto it and work with the left points from last time.We always have 50 points to be used.
 
-##Avoid hitting a car
+## Avoid hitting a car
 Use the data which come from sensor fusion. The simulator reports all car information of s d and vx vy values which can be used to figure out where cars are at.
 Line 267 to 331, go through the sensor fusion list.
 Line 293 to 331,  Do some action if too close.
@@ -40,11 +40,11 @@ Line 297 , check other cars whether or not in my lane.
 Line 306, check whether the distance of front car is less 30;
 Line 333 to 336, decrease the speed of the car if necessary;
 
-##Avoid jerk when cold start
+## Avoid jerk when cold start
 Line 309, if the distance of front car is more than 30, set too_close to false;
 Line 337 to 340, increase the speed of ref_vel if there is no car ahead of my car;control the added speed value could avoid jerk when cold start;
 
-#Lane change
+## Lane change
 Lane 267 to 289, the code check whether there are cars near my car, both left or right will be checked, the gap is between -50 to +50 meters away from my car;
 Lane 314 to 328, decide which lane to go, based on current lane.
 
